@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kala Yoshi</title>
     <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">    
@@ -11,7 +12,6 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
     
-
 </head>
 <body>
     <div class="container">
@@ -24,17 +24,16 @@
                     <a href="index.html"><img src="https://yoshigroup.jp/wp-content/uploads/2019/06/logo.png" alt=""></a>
                 </div>
                 <!-- nav là menu sẽ canh phải, dùng ul li a tạo ra menu ngang 1 cấp -->
-                <div class="header__nav">
-                    <ul class="header__nav-list">
-                        <li class="header__nav-item"><a href="intro.html" class="header__nav-link">Giới thiệu chung</a></li>
-                        <li class="header__nav-item"><a href="" class="header__nav-link">Lĩnh vực kinh doanh</a></li>
-                        <li class="header__nav-item"><a href="" class="header__nav-link">Dự án</a></li>
-                        <li class="header__nav-item"><a href="company.html" class="header__nav-link">Công ty thành viên</a></li>
-                        <li class="header__nav-item"><a href="news.html" class="header__nav-link">Tin tức</a></li>
-                        <li class="header__nav-item"><a href="company.html" class="header__nav-link">Tuyển dụng</a></li>
-                        <li class="header__nav-item"><a href="contact.html" class="header__nav-link">Liên hệ</a></li>
-                    </ul>
-                </div>                
+                <ul class="header__nav">
+                    <li class="header__nav-item"><a href="intro.html" class="header__nav-link">Giới thiệu chung</a></li>
+                    <li class="header__nav-item"><a href="" class="header__nav-link">Lĩnh vực kinh doanh</a></li>
+                    <li class="header__nav-item"><a href="" class="header__nav-link">Dự án</a></li>
+                    <li class="header__nav-item"><a href="company.html" class="header__nav-link">Công ty thành viên</a></li>
+                    <li class="header__nav-item"><a href="news.html" class="header__nav-link">Tin tức</a></li>
+                    <li class="header__nav-item"><a href="company.html" class="header__nav-link">Tuyển dụng</a></li>
+                    <li class="header__nav-item"><a href="contact.html" class="header__nav-link">Liên hệ</a></li>
+                </ul>
+                                
             </div>
         </header>
 
@@ -67,7 +66,7 @@
         </div>
         <!-- Khu vực sơ lược về Yoshi -->
         <div class="content">
-            <div class="content__box">
+            <div class="content__box clearfix">
                 <div class="content__heading">
                     <h1>Sơ lược về Yoshi Captital</h1>
                 </div>
@@ -82,39 +81,28 @@
                     magnam. Odio?
                 </div>
                 <a href="#" class="content__btn">Xem thêm <i class="fas fa-angle-right"></i></a>
+                <!-- Khu vực 2 tấm hình -->
+                <div class="two-column two-column--content">
+                    <!-- box chứa 2 cột -->
+                    <div class="two-column__box clearfix">
+                        <div class="two-column__column" style="padding-right: 10px;"><img src="https://yoshigroup.jp/wp-content/uploads/2020/01/xx1.png" alt=""></div>
+                        <div class="two-column__column" style="padding-left: 10px;"><img src="https://yoshigroup.jp/wp-content/uploads/2020/01/xx1.png" alt=""></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Khu vực 2 tấm hình -->
-        <div class="two-column">
-            <!-- box chứa 2 cột -->
-            <div class="two-column__box clearfix">
-                <div class="two-column__column"><img src="https://yoshigroup.jp/wp-content/uploads/2020/01/xx1.png" alt=""></div>
-                <div class="two-column__column"><img src="https://yoshigroup.jp/wp-content/uploads/2020/01/xx1.png" alt=""></div>
-            </div>
-        </div>
+        
+        
         <!-- Khu vực kết nối doanh nghiệp, sử dụng lại lớp two-column, cột bên trái sự dụng lại lớp content ở phần sơ lược, chỉnh sửa lại một chút cho phù hợp với giao diện, cột bên phải là hình  -->
         <div class="two-column">
-            <div class="two-column__box clearfix">
-                <div class="two-column__column">
-                    <div class="content">
-                        <!-- Một biến thể của content ở phần kết nối doanh nghiệp connect -->
-                        <div class="content__box content__box--connect">
-                            <div class="content__heading content__heading--connect">
-                                <h1>Kết nối doanh nghiệp</h1>
-                            </div>
-                            <div class="content__des content__des--connect">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Id maxime provident distinctio fugiat aut debitis voluptates 
-                                assumenda! Harum, optio quis. Pariatur assumenda accusamus error 
-                                excepturi. Perferendis amet nisi modi aliquid? Lorem ipsum dolor 
-                                sit amet consectetur adipisicing elit. Sunt, quia sed assumenda 
-                                libero praesentium veritatis modi unde adipisci? Magni aliquid 
-                                dolorum nobis fugiat possimus ratione adipisci dolorem ut 
-                                magnam. Odio?
-                            </div>
-                            <a href="#" class="content__btn">Xem thêm <i class="fas fa-angle-right"></i></a>
+            <div class="two-column__box two-column__box--connect clearfix">
+                <div class="two-column__column" style="padding-right: 10px">
+                    <div class="connect-content">
+                        <div class="connect-content__heading">Kết nối doanh nghiệp</div>
+                        <div class="connect-content__">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dignissimos eaque explicabo ullam autem sed laborum qui minima modi nostrum? Dicta, nulla? Nobis, hic quidem dicta fugit odit molestiae ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum impedit sit eveniet soluta, voluptas ut consectetur nihil dolorem deleniti et libero quia, laborum exercitationem? Porro eos saepe temporibus earum aspernatur?
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <!-- cột thứ bên phải chứa hình -->
                 <div class="two-column__column two-column__column--connect">

@@ -19,35 +19,29 @@ body {
   display: table;
 }
 
-.container {
-  max-width: 1500px;
-  margin: 0 auto;
-}
-
 .header {
-  position: sticky;
-  top: 0;
+  width: 100%;
   background-color: white;
   z-index: 999;
-  box-shadow: 0 0 10px 1px #363535;
+  box-shadow: 0 0 10px 0 #b9b4b4;
 }
 
 .header__box {
   padding: 20px 5px;
-  margin: 0 80px;
+  margin: 0 260px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .header__logo {
-  float: left;
-  padding-left: 80px;
+  padding-left: 20px;
 }
 
 .header__nav {
-  float: right;
-  padding-right: 80px;
+  padding-right: 20px;
 }
 
-.header__nav ul.header__nav-list {
+.header__nav ul.header__nav {
   list-style-type: none;
 }
 
@@ -165,12 +159,7 @@ body {
 
 .content__box {
   padding-top: 10px;
-  margin: 0 80px;
-}
-
-.content__box--connect {
-  margin: 0;
-  padding-top: 0;
+  margin: 0 260px;
 }
 
 .content__box--project {
@@ -241,7 +230,6 @@ body {
 .content__des--connect {
   margin-bottom: 20px;
   overflow: hidden;
-  height: 140px;
 }
 
 .content__des--project {
@@ -275,17 +263,23 @@ body {
 
 .two-column {
   margin-bottom: 20px;
+  margin: 0 260px;
+}
+
+.two-column--content {
+  margin: 0;
 }
 
 .two-column__box {
-  margin: 0 80px;
-  padding-top: 10px;
+  display: flex;
+  padding-top: 30px;
+  justify-content: space-between;
 }
 
 .two-column__column {
-  max-width: 50%;
-  float: left;
-  padding: 0 10px;
+  flex: 1;
+  display: block;
+  width: 50%;
 }
 
 .two-column__column--connect {
@@ -301,6 +295,10 @@ body {
   display: block;
   width: 420px;
   margin: auto;
+}
+
+.connect-content {
+  margin: 0;
 }
 
 .project {
@@ -335,7 +333,7 @@ body {
 }
 
 .project__box {
-  margin: 0 80px;
+  margin: 0 260px;
   background-color: white;
 }
 
@@ -370,7 +368,7 @@ body {
 }
 
 .company-image__box {
-  margin: 0 80px;
+  margin: 0 260px;
 }
 
 .company-image__heading {
@@ -388,7 +386,7 @@ body {
 }
 
 .footer__box {
-  margin: 0 80px;
+  margin: 0 260px;
   padding-bottom: 30px;
 }
 
@@ -444,7 +442,7 @@ body {
 }
 
 .breadcrum__box {
-  margin: 0 80px;
+  margin: 0 260px;
 }
 
 .breadcrum ul {
@@ -530,7 +528,7 @@ body {
 }
 
 .job__box {
-  margin: 0 80px;
+  margin: 0 260px;
 }
 
 .job__heading {
@@ -542,7 +540,7 @@ body {
 }
 
 .news__box {
-  margin: 0 80px;
+  margin: 0 260px;
 }
 
 .news__heading h1 {
