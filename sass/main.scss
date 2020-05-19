@@ -1,25 +1,27 @@
 // Biến cho phép thay đổi đồng loạt màu nền của các khu vực trên website
 $session-background-color: white;
 // Biến cho phép thay đổi độ cách lề màn hình của các khu vực trên website
-$session-margin: 0 20px;
+$session-margin: 0 260px;
 // Biến cho phép thay đổi khoảng cách bottom của các khu vực trên website
 $session-margin-bottom: 20px;
 // Biến cho phép thay đổi màu của các link trên menu nav
 $nav_link-color: black;
+$box-width: 100%;
 
 *{
     //kế thừa theo phần tử cha, không bị ảnh hưởng bởi thành phần toàn cục
     box-sizing: inherit;
 }
+
 body{
     box-sizing: border-box;
     background-color: white;
-    margin: auto;
+    margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color:#333;
+    color: #333;
 }
 // Bao trọn các div bên trong trường hợp bị tràn
 .clearfix::after {
@@ -28,32 +30,30 @@ body{
     display: table;
   }
 .container {
-    max-width: 100%;
     // canh giữa div bao ngoài
-    margin: 0 auto;
 }
 .header {
     width: 100%;
     //giữ vị trí header khi kéo trang xuống dưới
-    position: sticky; 
-    top: 0;
+    // position: sticky; 
+    // top: 0;
     background-color: $session-background-color;
     //z-index dùng để luôn ưu tiên hiển thị nằm trên các layout khác.
     z-index: 999;
     //tô bóng đáy màu xám đen
-    box-shadow: 0 0 10px 0px rgb(54, 53, 53);
+    box-shadow: 0 0 10px 0 rgb(185, 180, 180);
     &__box {
         padding: 20px 5px;
         margin: $session-margin;
+        display: flex;
+        justify-content: space-evenly;
     }
         &__logo {
-            float: left;
-            padding-left: 80px;
+            padding-left: 20px;
         }
         &__nav {
-            float: right;
-            padding-right: 80px;
-            ul.header__nav-list {
+            padding-right: 20px;
+            ul.header__nav {
                 list-style-type: none;
             }
                 li.header__nav-item {
@@ -98,7 +98,7 @@ body{
     width: 100%;
     /* Slideshow container */
     .slideshow-container {
-        width: 100%;
+        max-width: 100%;
         position: relative;
         margin: auto;
     }
@@ -173,11 +173,7 @@ body{
     &__box {
         padding-top: 10px;
         margin: $session-margin;
-        border-bottom: 1px solid rgba(112, 108, 108, 0.1);
-        &--connect {
-            margin: 0;
-            padding-top: 0;
-        }
+       
         &--project {
             margin: 0;
             padding: 0;
@@ -223,7 +219,6 @@ body{
                     text-align: left;
                     font-size: 1.5rem;
                     font-weight: 10px;
-                    margin-top: 5px;
                 }
             }
             &--companyPage {
@@ -237,14 +232,13 @@ body{
         &__des {
             text-align: justify;
             margin: 0;
-            padding-bottom: 60px;
+            padding-bottom: 50px;
             font-size: 1rem;
             line-height: 1.5em;
             
             &--connect {
                 margin-bottom: 20px;
                 overflow: hidden;
-                height: 140px;
             }
             &--project {
                 padding: 10px;
@@ -273,18 +267,20 @@ body{
         }
 }
 .two-column {
-    width: 1500px;
-    margin: auto;
     margin-bottom: $session-margin-bottom;
+    margin: $session-margin;
+    &--content {
+        margin: 0;
+    }
     &__box {
-
-        margin: auto;
-        padding-top: 10px;
+        display: flex;
+        padding-top: 30px;
+        justify-content: space-between;
     }
         &__column {
-            max-width: 50%;
-            float: left;
-            padding: 0 10px;
+            flex: 1;
+            display: block;
+            width: 50%;
             &--connect {
                 padding: 5px 80px 5px;
                 }
@@ -300,6 +296,9 @@ body{
                 margin: auto;
                 
             }
+}
+.connect-content {
+    margin: 0;
 }
 .project {
     margin-bottom: $session-margin-bottom;

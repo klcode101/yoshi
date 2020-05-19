@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kala Yoshi</title>
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://luuquangtri.github.io/yoshi/font/font.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
+    
+</head>
+<body>
+    <div class="container">
+        <!-- phần header là thanh màu trắng trên cùng bao gồm logo (header__logo) và menu phải (header__nav) -->
+        <header class="header">
+            <!-- header__box dùng để canh giữa, điều chỉnh margin của logo và nav, có lớp clearfix để bên trong box mà có float thì clearfix sẽ giúp box bao được các thành phần -->
+            <div class="header__box clearfix">
+                <!-- Logo sẽ canh trái -->
+                <div class="header__logo">
+                    <a href="index.html"><img src="https://yoshigroup.jp/wp-content/uploads/2019/06/logo.png" alt=""></a>
+                </div>
+                <!-- nav là menu sẽ canh phải, dùng ul li a tạo ra menu ngang 1 cấp -->
+                <div class="header__nav clearfix">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item"><a href="intro.html" class="header__nav-link">Giới thiệu chung</a></li>
+                        <li class="header__nav-item"><a href="" class="header__nav-link">Lĩnh vực kinh doanh</a></li>
+                        <li class="header__nav-item"><a href="" class="header__nav-link">Dự án</a></li>
+                        <li class="header__nav-item"><a href="company.html" class="header__nav-link">Công ty thành viên</a></li>
+                        <li class="header__nav-item"><a href="news.html" class="header__nav-link">Tin tức</a></li>
+                        <li class="header__nav-item"><a href="company.html" class="header__nav-link">Tuyển dụng</a></li>
+                        <li class="header__nav-item"><a href="contact.html" class="header__nav-link">Liên hệ</a></li>
+                    </ul>
+                </div>                
+            </div>
+        </header>
