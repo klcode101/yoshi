@@ -1,110 +1,116 @@
-// Biến cho phép thay đổi đồng loạt màu nền của các khu vực trên website
-$session-background-color: white;
-// Biến cho phép thay đổi độ cách lề màn hình của các khu vực trên website
-$session-margin: 0 260px;
-// Biến cho phép thay đổi khoảng cách bottom của các khu vực trên website
-$session-margin-bottom: 20px;
-// Biến cho phép thay đổi màu của các link trên menu nav
-$nav_link-color: black;
-$box-width: 100%;
-
-*{
-    //kế thừa theo phần tử cha, không bị ảnh hưởng bởi thành phần toàn cục
+//color;
+$color-text-primary: #000;
+$color-background-primary: #fff;
+$color-hover-box: rgb(237, 237, 245);
+$color-background-hover-box: rgb(53, 53, 160);
+* {
     box-sizing: inherit;
 }
 
-body{
-    box-sizing: border-box;
-    background-color: white;
-    margin: 0;
-    padding: 0;
+body {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;
+    margin: 0;
+    padding: 0; 
+    color: $color-text-primary;
+    background-color: $color-background-primary;
+    font-size: 1rem;
 }
-// Bao trọn các div bên trong trường hợp bị tràn
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-.container {
-    width: 100%;
+//===========Base class=============//
+.content {
+    &__heading {
+        h1.heading {
+        }
+        &--textCenter {
+            text-align: center;
+            h1.content__heading--paddingBottom {
+                padding-bottom: 30px;
+            }
+        }
+
+    }
+    &__des {
+        text-align: justify;
+        margin-bottom: 20px;
+        font-size: 1rem;
+        &--intro {
+            margin-bottom: 40px;
+            font-weight: 300;
+            font-size: 1.2rem;
+            line-height: 1.7rem;
+        }
+    }
 }
+a.btn {
+    padding: 10px 15px;
+    border-radius: 10px;
+    &:hover {
+        background-color: $color-background-hover-box;
+        color: $color-hover-box;
+    }
+}
+
+
+//main content
 .header {
     width: 100%;
-    //giữ vị trí header khi kéo trang xuống dưới
-    // position: sticky; 
-    // top: 0;
-    background-color: $session-background-color;
-    //z-index dùng để luôn ưu tiên hiển thị nằm trên các layout khác.
-    z-index: 999;
-    //tô bóng đáy màu xám đen
-    box-shadow: 0 0 10px 0 rgb(185, 180, 180);
-    &__box {
-        padding: 20px 5px;
-        margin: $session-margin;
-        display: flex;
-        justify-content: space-evenly;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px 0;
+    box-shadow: 0 0 10px 0  rgb(185, 180, 180);
+    &__logo {
+        padding-top: 5px;
+        img.header__logo-img {
+            display: block;
+            border: none;
+            outline: none;
+        }
     }
-        &__logo {
-            padding-left: 20px;
-        }
-        &__nav {
-            padding-right: 20px;
-            ul.header__nav {
-                list-style-type: none;
-            }
-                li.header__nav-item {
-                    //menu nằm ngang
-                    display: inline;
-                    //Dùng relative cho a::after (dùng absolute) để cố định vị trí thanh gạch dưới khi rê chuột vào thẻ a
-                    position: relative;
-                    margin: 5px 10px;
-                    a {
-                        text-decoration: none;
-                        color: $nav_link-color;
-                        font-size: 0.9rem;
-                        font-weight: 400;
-                        padding-bottom: 5px;
-                    }
-                    // Code css thanh gạch dưới khi rê chuột vào link menu, hiệu ứng chạy từ giữa ra 2 biên của a
-                    a::after {
-                        position: absolute;
-                        width: 0%;
-                        background-color: #3838d2;
-                        // Độ rộng của thanh gạch dưới
-                        height: 2px;
-                        content: "";
-                        // vị trí hiệu ứng bắt đầu là chính giữa thanh gạch dưới
-                        left: 50%;
-                        // thanh gạch dưới cách top đầu của link khoảng cách 120%
-                        top: 120%;
-                        // điểm kế tiếp của thanh gạch dưới
-                        transform: translate(-50%);
-                        // hiệu ứng chạy thanh ngang với độ nhanh 1 giây, biến đổi theo width
-                        transition: width 1s;
-                    }
-                    // kết hợp với transition biến đổi width từ 0% đến 100%;
-                    a:hover::after {
-                        width: 100%;
-                    }
+    ul.nav__list {
+        list-style: none;
+        display: flex;
+        li.nav__item {
+            padding: 10px;
+            a.nav__link {
+                position: relative;;
+                text-decoration: none;
+                color: $color-text-primary;
+                font-weight: 350;
+                &::after {
+                    position: absolute;
+                    width: 0%;
+                    background-color: #3838d2;
+                    // Độ rộng của thanh gạch dưới
+                    height: 2px;
+                    content: "";
+                    // vị trí hiệu ứng bắt đầu là chính giữa thanh gạch dưới
+                    left: 50%;
+                    // thanh gạch dưới cách top đầu của link khoảng cách 120%
+                    top: 120%;
+                    // điểm kế tiếp của thanh gạch dưới
+                    transform: translate(-50%);
+                    // hiệu ứng chạy thanh ngang với độ nhanh 1 giây, biến đổi theo width
+                    transition: width 1s;
                 }
+                &:hover::after {
+                    width: 100%;
+                }
+            }
         }
+    }
+
 }
 .banner {
-    margin-bottom: $session-margin-bottom;
     width: 100%;
     /* Slideshow container */
     .slideshow-container {
-        max-width: 100%;
+        //width: 100%;
         position: relative;
         margin: auto;
     }
-    
+
     /* Next & previous buttons */
-    .prev, .next {
+    .prev,
+    .next {
         cursor: pointer;
         position: absolute;
         top: 50%;
@@ -118,18 +124,19 @@ body{
         border-radius: 0 3px 3px 0;
         user-select: none;
     }
-    
+
     /* Position the "next button" to the right */
     .next {
         right: 0;
         border-radius: 3px 0 0 3px;
     }
-    
+
     /* On hover, add a black background color with a little bit see-through */
-    .prev:hover, .next:hover {
-        background-color: rgba(0,0,0,0.8);
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
     }
-    
+
     /* Caption text */
     .text {
         color: #f2f2f2;
@@ -140,11 +147,11 @@ body{
         width: 100%;
         text-align: center;
     }
-    
+
     .active {
         background-color: #717171;
     }
-    
+
     /* Fading animation */
     .fade {
         -webkit-animation-name: fade;
@@ -152,377 +159,35 @@ body{
         animation-name: fade;
         animation-duration: 1.5s;
     }
-    
+
     @-webkit-keyframes fade {
-        from {opacity: .4} 
-        to {opacity: 1}
+        from {
+            opacity: 0.4;
+        }
+        to {
+            opacity: 1;
+        }
     }
-    
+
     @keyframes fade {
-        from {opacity: .4} 
-        to {opacity: 1}
+        from {
+            opacity: 0.4;
+        }
+        to {
+            opacity: 1;
+        }
     }
-    
+
     /* On smaller screens, decrease text size */
     @media only screen and (max-width: 300px) {
-        .prev, .next,.text {font-size: 11px}
+        .prev,
+        .next,
+        .text {
+            font-size: 11px;
+        }
     }
 }
-.content {
-    margin-bottom: $session-margin-bottom;
-    &__box {
-        padding-top: 10px;
-        margin: $session-margin;
-       
-        &--project {
-            margin: 0;
-            padding: 0;
-        }
-    }
-    
-        &__heading {
-            padding-bottom: 50px;
-            h1 {
-                margin:0;
-                text-align: center;
-            }
-            &--connect {
-                padding-top: 40px;
-                padding-bottom: 20px;
-                h1 {
-                    font-size: 2.4rem;
-                    font-weight: 350;
-                    text-transform: uppercase;
-                    text-align: left;
-                }
-            }
-            &--project {
-                padding-top: 10px;
-                padding-bottom: 10px;
-                h1 {
-                    font-size: 1.6rem;
-                    font-weight: 390;
-                    margin: 0;
-                    text-align: center;
-                }
-            }
-            &--why-us {
-                h1 {
-                    margin-bottom: 10px;
-                    text-transform: uppercase;
-                    font-size: 1.8rem;
-                    text-align: center;
-                }
-            }
-            &--introPage {
-                h1 {
-                    text-align: left;
-                    font-size: 1.5rem;
-                    font-weight: 10px;
-                }
-            }
-            &--companyPage {
-                h1 {
-                    text-align: left;
-                    font-size: 1.5rem;
-                    font-weight: 10px;
-                }
-            }
-        }
-        &__des {
-            text-align: justify;
-            margin: 0;
-            padding-bottom: 50px;
-            font-size: 1rem;
-            line-height: 1.5em;
-            
-            &--connect {
-                margin-bottom: 20px;
-                overflow: hidden;
-            }
-            &--project {
-                padding: 10px;
-                text-align: center;
-            }
-            &--why-us {
-                padding: 35px 0;
-                font-size: 1.1rem;
-                font-weight: 300;
-            }
-            &--companyPage {
-                line-height: 2em;
-                font-size: 1.2rem;
-            }
-        }
-        a.content__btn {
-            padding: 5px 10px;
-            border: 1px solid rgb(70, 67, 67);
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        a.content__btn:hover {
-            background-color: rgb(68, 68, 219);
-            color: white;
-        }
+.intro {
+    max-width: 1200px;
+    margin: 0 auto;
 }
-.two-column {
-    margin-bottom: $session-margin-bottom;
-    margin: $session-margin;
-    &--content {
-        margin: 0;
-    }
-    &__box {
-        display: flex;
-        padding-top: 30px;
-        justify-content: space-between;
-    }
-        &__column {
-            flex: 1;
-            display: block;
-            width: 50%;
-            &--connect {
-                padding: 5px 80px 5px;
-                }
-            
-        }
-            img {
-            display: block;
-            width: 100%;
-            }
-            img.connect {
-                display: block;
-                width: 420px;
-                margin: auto;
-                
-            }
-}
-.connect-content {
-    margin: 0;
-}
-.project {
-    margin-bottom: $session-margin-bottom;
-    &__banner {
-        margin-bottom: $session-margin-bottom;
-        height: 200px;
-        background-image: url("https://yoshigroup.jp/wp-content/uploads/2019/06/business-01.jpg");
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: relative;
-        &-layer {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 200px;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-        &-text {
-            text-transform: uppercase;
-            margin: auto;
-            width: 350px;
-            padding: 80px 5px 0;
-            font-size: 2.5rem;
-            color: white;
-        }
-    }
-        
-    &__box {
-        margin: $session-margin;
-        background-color: white;
-        &--newsPage {
-            margin: 0;
-        }
-    }
-        &__item {
-            margin: 0 15px;
-            float: left;
-            border: none;
-            width: 30%;
-            box-shadow: 0 0 10px #888888;            ;
-        }
-        &__item:hover {
-            transform: translateY(-3%);
-            transition: all 0.3s ease-in;
-        }
-            &__item-head {
-                height: 190px;
-                img {
-                    display: block;
-                    width: 100%;
-                }
-            }
-
-}
-.company-image {
-    margin-bottom: $session-margin-bottom;
-    &__box {
-        margin: $session-margin;
-    }
-        &__heading {
-            text-transform: uppercase;
-            font-size: 1.5rem;
-        }
-        &__owl-carousel {
-            .owl-itema {
-               padding: 10px;
-            }
-        }
-            
-}
-.footer {
-    background-color: rgb(13, 113, 195);
-    color: black;
-    &__box {
-        margin: $session-margin;
-        padding-bottom: 30px;
-    }
-        &__column {
-            padding-top: 30px;
-            width: 25%;
-            float: left;
-            font-size: 1rem;
-            &-head{
-                margin: 0;
-                font-size: 1.7rem;
-            }
-            ul {
-                margin: 0;
-                li a{
-                    text-decoration: none;
-                    color: white;
-                }
-            }
-        }
-        &__qrcode {
-            padding-top: 30px;
-            float: left;
-            width: 25%;
-           &-heading {
-                font-size: 1.7rem;
-                text-align: center;
-           }
-           &-img {
-
-              img {
-                  margin: auto;
-                  display: block;
-                  width: 50%;
-                  border: none;
-              }
-           }
-        }
-    &__copyright {
-        text-align: center;
-        background-color: black;
-        width: 100%;
-        color: white;
-        padding: 10px 0;
-    }
-}
-.breadcrum {
-    margin-bottom: $session-background-color;
-    &__box {
-        margin: $session-margin;
-    }
-        ul {
-            padding: 10px 0px;
-            list-style: none;
-            li {
-                display: inline;
-                font-size: 18px;
-                a {
-                    color: #0275d8;
-                    text-decoration: none;
-                }
-                a:hover {
-                    color: #01447e;
-                    text-decoration: underline;
-                }
-            }
-            li+li:before {
-                padding: 8px;
-                color: black;
-                content: "/\00a0";
-            }
-            
-        }
-}
-.map {
-    margin-bottom: $session-margin-bottom;
-}
-.formContact {
-    width: 500px;
-    margin: auto;
-    margin-bottom: $session-margin-bottom;
-    &__heading {
-        h1 {
-            text-transform: uppercase;
-            font-weight: 400;
-            text-align: center;
-            font-size: 2rem;
-        }
-    }
-    &__name {
-        font-size: 1rem;
-    }
-    input[type=text] {
-        width: 100%;
-        padding: 10px;
-        font-size: 1rem;
-        border-radius: 10px;
-        border: 1px solid gray;
-        margin: 8px 0 20px 0;
-    }
-    textarea {
-        width: 100%;
-        font-size: 1rem;
-        border-radius: 10px;
-        border: 1px solid gray;
-        padding: 10px;
-    }
-    input[type=submit] {
-        background-color: rgb(13, 113, 195);
-        margin: auto;
-        padding: 10px;
-        font-size: 1rem;
-        color: white;
-        border-radius: 5px;
-    }
-    select {
-        width: 100%;
-        margin: 8px 0 20px 0;
-        
-        font-size: 1rem;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        height: 40px;
-        padding: 20px;
-    }
-}
-.job {
-    &__box {
-        margin: $session-margin
-    }
-        &__heading {
-            border-bottom: 1px solid rgba(112, 108, 108, 0.1);
-            h2 {
-                text-align: left;
-            }
-        }
-}
-.news {
-    &__box {
-        margin: $session-margin;
-    }
-        &__heading {
-    
-            h1 {
-                text-align: left;
-            }
-        }
-}
-
-
-
