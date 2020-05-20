@@ -1,12 +1,24 @@
-//color;
+//base color;
 $color-text-primary: #000;
 $color-background-primary: #fff;
-$color-hover-box: rgb(237, 237, 245);
+$color-text-hover-box: rgb(237, 237, 245);
 $color-background-hover-box: rgb(53, 53, 160);
+$color-border-btn: #000;
+$color-text-btn: #000;
+
+//footer
+$color-text-footer: #fff;
+$color-background-footer: #0D71CB;
+$color-link-footer:  #fff;
+
 * {
     box-sizing: inherit;
 }
-
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -20,32 +32,63 @@ body {
     &__heading {
         h1.heading {
         }
-        &--textCenter {
-            text-align: center;
-            h1.content__heading--paddingBottom {
+        &--intro {
+            h1.content__heading--intro {
                 padding-bottom: 30px;
+                text-align: center;;
             }
         }
-
-    }
+        &--connect {
+            h1.content__heading--connect {
+                text-transform: uppercase;
+                font-weight: 300;
+                font-size: 2.5rem;
+                padding-bottom: 5px;
+                margin: 20px 0 5px 0;
+            }
+        }
+        &--develop {
+            h1.content__heading--develop {
+                font-size: 1.55rem;
+                text-align: center;
+                font-weight: 400;
+            }
+        }
+}
     &__des {
         text-align: justify;
         margin-bottom: 20px;
         font-size: 1rem;
         &--intro {
-            margin-bottom: 40px;
+            padding-bottom: 40px;
             font-weight: 300;
-            font-size: 1.2rem;
+            font-size: 1.18rem;
+            line-height: 1.7rem;
+        }
+        &--connect {
+            font-weight: 300;
+            font-size: 1.18rem;
+            line-height: 1.7rem;
+            overflow: hidden;
+        }
+        &--develop {
+            text-align: center;
+            padding: 5px 20px;
+            font-size: 1rem;
             line-height: 1.7rem;
         }
     }
 }
 a.btn {
     padding: 10px 15px;
+    border: 1px solid $color-border-btn;
     border-radius: 10px;
+    color: $color-text-btn;
+    text-decoration: none;
     &:hover {
         background-color: $color-background-hover-box;
-        color: $color-hover-box;
+        color: $color-text-hover-box;
+
     }
 }
 
@@ -99,14 +142,11 @@ a.btn {
     }
 
 }
-.banner {
-    width: 100%;
-    /* Slideshow container */
-    .slideshow-container {
-        //width: 100%;
+.slideshow-container {
+        width: 100%;
         position: relative;
         margin: auto;
-    }
+    
 
     /* Next & previous buttons */
     .prev,
@@ -186,8 +226,158 @@ a.btn {
             font-size: 11px;
         }
     }
+
 }
+
 .intro {
     max-width: 1200px;
     margin: 0 auto;
 }
+.two-col {
+    padding: 40px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    &--connect {
+        padding-top: 5px;
+    }
+    &__col {
+        width: 49%;
+        img.intro-img {
+            width: 100%;
+            display: block;
+        }
+        &--connect {
+            img.connect-img {
+                display: block;
+                width: 90%;
+                margin: auto;
+            }
+        }
+    }
+}
+.connect {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+
+}
+.project {
+    position: relative;
+    width: 100%;
+    background-image: url("https://yoshigroup.jp/wp-content/uploads/2019/06/business-01.jpg");
+    background-attachment: fixed;
+    display: flex;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 20px;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(49, 47, 47, 0.4);
+    }
+    &__text {
+        position: relative;
+        color: #fff;
+        margin: auto;
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        font-weight: 300;
+    }
+}
+.develop {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    &__item {
+        box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.3);
+        flex-basis: 32%;
+        img.develop-img{
+            display: block;
+            max-width: 100%;
+        }
+    }
+}
+.whyUs {
+    padding: 30px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.company-image {
+    width: 1200px;
+    margin: auto;
+    padding-bottom: 20px;
+
+    &__heading {
+        padding-bottom: 10px;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+    }
+    &__owl-carousel {
+        .owl-itema {
+            padding: 10px;
+        }
+    }
+}
+.footer {
+    background-color: $color-background-footer;
+    width: 100%;
+    padding-bottom: 30px;
+    &__box {
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__col {
+        padding-top: 30px;
+        flex-basis: 25%;
+    }
+    &__col-heading {
+        font-size: 1.7rem;
+        font-weight: 400;
+    }
+    &__col-item {
+        padding: 1px 0;
+        font-size: 1.1rem;
+    }
+    ul.footer__col-list {
+        padding-left: 15px;
+        a.footer__col-link {
+            text-decoration: none;
+            color: $color-link-footer;
+        }
+    }
+    &__qrcode {
+        padding-top: 30px;
+        flex-basis: 25%;
+        &-heading{
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: 400;
+        }
+        img.footer__qrcode-img {
+            display: block;
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+    &__copyright {
+        text-align: center;
+        background-color: black;
+        width: 100%;
+        color: white;
+        padding: 10px 0;
+    }
+}
+
+
+
+
+
+
