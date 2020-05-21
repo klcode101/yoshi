@@ -96,10 +96,14 @@ a.btn {
 //main content
 .header {
     width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 15px 0;
-    box-shadow: 0 0 10px 0  rgb(185, 180, 180);
+    &__box {
+        width: 1350px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 0;
+        box-shadow: 0 0 10px 0  rgb(185, 180, 180);
+        }
     &__logo {
         padding-top: 5px;
         img.header__logo-img {
@@ -142,11 +146,15 @@ a.btn {
     }
 
 }
-.slideshow-container {
-        width: 100%;
+.banner {
+    margin-bottom: 20px;
+    width: 100%;
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 100%;
         position: relative;
         margin: auto;
-    
+    }
 
     /* Next & previous buttons */
     .prev,
@@ -226,7 +234,6 @@ a.btn {
             font-size: 11px;
         }
     }
-
 }
 
 .intro {
