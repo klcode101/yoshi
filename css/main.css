@@ -78,9 +78,14 @@ a.btn:hover {
 
 .header {
   width: 100%;
+}
+
+.header__box {
+  width: 1350px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
-  padding: 15px 0;
+  padding: 10px 0;
   box-shadow: 0 0 10px 0 #b9b4b4;
 }
 
@@ -126,10 +131,10 @@ a.btn:hover {
   width: 100%;
 }
 
-.slideshow-container {
+.banner {
+  margin-bottom: 20px;
   width: 100%;
-  position: relative;
-  margin: auto;
+  /* Slideshow container */
   /* Next & previous buttons */
   /* Position the "next button" to the right */
   /* On hover, add a black background color with a little bit see-through */
@@ -138,8 +143,14 @@ a.btn:hover {
   /* On smaller screens, decrease text size */
 }
 
-.slideshow-container .prev,
-.slideshow-container .next {
+.banner .slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.banner .prev,
+.banner .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -154,17 +165,17 @@ a.btn:hover {
   user-select: none;
 }
 
-.slideshow-container .next {
+.banner .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-.slideshow-container .prev:hover,
-.slideshow-container .next:hover {
+.banner .prev:hover,
+.banner .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.slideshow-container .text {
+.banner .text {
   color: #f2f2f2;
   font-size: 2rem;
   position: absolute;
@@ -174,11 +185,11 @@ a.btn:hover {
   text-align: center;
 }
 
-.slideshow-container .active {
+.banner .active {
   background-color: #717171;
 }
 
-.slideshow-container .fade {
+.banner .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
   animation-name: fade;
@@ -195,9 +206,9 @@ a.btn:hover {
 }
 
 @media only screen and (max-width: 300px) {
-  .slideshow-container .prev,
-  .slideshow-container .next,
-  .slideshow-container .text {
+  .banner .prev,
+  .banner .next,
+  .banner .text {
     font-size: 11px;
   }
 }
