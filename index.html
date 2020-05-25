@@ -14,14 +14,14 @@
     <header class="header">
         <div class="container">
             <div class="header__logo">
-                <a href="#">
+                <a href="index.html">
                     <img class="header__logo-img" src="https://yoshigroup.jp/wp-content/uploads/2019/06/logo.png" alt="">
                 </a>
             </div>
             <div class="nav">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Giới thiệu chung</a>
+                        <a href="intro.html" class="nav__link">Giới thiệu chung</a>
                     </li>
                     <li class="nav__item">
                         <a href="#" class="nav__link">Lĩnh vực kinh doanh</a>
@@ -30,16 +30,16 @@
                         <a href="#" class="nav__link">Dự án</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Công ty thành viên</a>
+                        <a href="company.html" class="nav__link">Công ty thành viên</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Tin tức</a>
+                        <a href="news.html" class="nav__link">Tin tức</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Tuyển dụng</a>
+                        <a href="job.html" class="nav__link">Tuyển dụng</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Liên hệ</a>
+                        <a href="contact.html" class="nav__link">Liên hệ</a>
                     </li>
                 </ul>
             </div>
@@ -48,9 +48,9 @@
     <!-- slide biến đổi hình trên banner -->
     <div class="banner">
         <!-- <div class="banner__layer clearfix"> -->
-            <div class="owl-carousel owl-theme">
-                <div><img src="https://phongvu.vn/cong-nghe/wp-content/uploads/2018/07/hinh-nen-laptop.jpeg" alt=""></div>
-                <div><img src="https://www.takadada.com/wp-content/uploads/2019/07/hinh-anh-cuc-quang-1.jpg" alt=""></div>
+            <div class="owl-banner owl-carousel owl-theme clearfix">
+                <div class="banner__item"><img src="https://phongvu.vn/cong-nghe/wp-content/uploads/2018/07/hinh-nen-laptop.jpeg" alt="" ></div>
+                <div class="banner__item"><img src="https://www.takadada.com/wp-content/uploads/2019/07/hinh-anh-cuc-quang-1.jpg" alt="" ></div>
             </div>
         <!-- </div> -->
     </div>
@@ -189,6 +189,7 @@ $('.pre').click(function() {
             </div>
         </div>
     </div>
+    
     <!-- Khu vực hình ảnh công ty -->
     <div class="company-image">
         <div class="company-image__box">
@@ -290,7 +291,7 @@ $(document).ready(function(){
             }
         }
     });
-    $('.owl-carousel').owlCarousel({
+    $('.owl-banner').owlCarousel({
         loop:true,
         margin:10,
         nav:true,
