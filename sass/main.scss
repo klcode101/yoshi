@@ -129,7 +129,6 @@ $color-link-footer:  #fff;
         &--developPage {
             font-size: 16px;
             text-align: justify;
-            font-family: "UTM Avo";
             padding-bottom: 15px;
             padding-bottom: 15px;
             overflow: hidden;
@@ -181,7 +180,7 @@ hr {
 //===============main content===============
 
 body {
-    font-family: "UTM Avo", 'Roboto', sans-serif;
+    font-family: "UTM Avo";
     margin: 0;
     padding: 0; 
     color: $color-text-primary;
@@ -507,6 +506,11 @@ body {
         resize: none;
         outline: none;
     }
+    textarea:focus {
+        border-color: #66afe9;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+        outline: none;
+    }
     input[type="submit"] {
         background-color: rgb(13, 113, 195);
         margin: 10px 35%;
@@ -518,6 +522,11 @@ body {
         outline: none;
         width: 150px;
     }
+    input:focus {
+        border-color: #66afe9;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+        outline: none;
+    }
     select {
         width: 100%;
         margin: 8px 0 20px 0;
@@ -527,6 +536,12 @@ body {
         appearance: none;
         height: 40px;
         padding: 20px;
+        outline: none;
+        border-radius: 5px;
+    }
+    select:focus {
+        border-color: #66afe9;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
         outline: none;
     }
 }
