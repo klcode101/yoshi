@@ -10,6 +10,12 @@ $color-background-layer:  rgba(49, 47, 47, 0.4);
 //header
 $color-background-header: #fff;
 
+//breadcrumb
+$color-breadcrumb-link: #337ab7;
+
+//banner 
+$color-btn-banner: #fff;
+
 //footer
 $color-text-footer: #fff;
 $color-background-footer: #0D71CB;
@@ -23,6 +29,12 @@ $color-link-footer:  #fff;
     padding: 0 10px;
     display: flex;
     justify-content: space-between;
+    &--jobPage {
+        display: block;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
     // &--header {
     //     display: flex;
     //     justify-content: space-between;
@@ -62,6 +74,26 @@ $color-link-footer:  #fff;
                 font-weight: 400;
             }
         }
+        &--introPage {
+            h1.content__heading--introPage {
+                font-size: 2.5rem;
+                font-weight: 550;
+                margin-bottom: 50px;
+            }
+        }
+        &--companyPage {
+            h1.content__heading--companyPage {
+                font-size: 1.5rem;
+                font-weight: 150px;
+                margin-bottom: 50px;
+            }
+        }
+        &--jobPage {
+            h1.content__heading-jobPage {
+                font-size: 1.7rem;
+                font-weight: 300px;
+            }
+        }
     }
     &__des {
         text-align: justify;
@@ -85,6 +117,15 @@ $color-link-footer:  #fff;
             font-size: 1rem;
             line-height: 1.7rem;
         }
+        &--companyPage {
+            padding-bottom: 40px;
+            font-weight: 300;
+            font-size: 1.18rem;
+            line-height: 1.7rem;
+            a.companyPage-link {
+                text-decoration: none;
+            }
+        }
     }
 }
 a.btn {
@@ -103,7 +144,17 @@ a.btn {
         word-spacing: 5px;
     }
 }
+hr {
+    display: block;
+    border: 0;
+    border-top: 1px solid #eee;
+    max-width: 1200px;
+    margin: 20px auto;
 
+}
+
+
+//==================base end===================
 * { 
     box-sizing: inherit;
 }
@@ -126,6 +177,7 @@ body {
 
 .header {
     width: 100%;
+    padding: 15px 0;
     box-shadow: 0 0 10px 0  rgb(185, 180, 180);
     position: -webkit-sticky; /* Safari */
     position: sticky;
@@ -174,19 +226,19 @@ body {
     }
 
 }
-.banner {
+.banner_item {
     position: relative;
-    &::after {
-        content: "";
+    &::before {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+        content: "";
         background-color: $color-background-layer;
-        
     }
 }
+
 .owl-nav {
     display: block;
     width: 100%;
@@ -194,26 +246,30 @@ body {
     top: 30%;
     font-size: 10rem;
     margin-bottom: 20px;
+    color: $color-btn-banner;
     
 }
 
-.owl-prev {
+// Set Height cho banner
+// .owl-carousel .owl-stage {
+//     display: flex;
+//     height: 550px;
+//     background-color: rgba(0, 0, 0, 0.3);
+// }
+
+// .owl-banner .owl-carousel .owl-item img {
+//     width: auto;
+//     height: 100%;
+// }
+
+// Nút mũi tên trên banner
+.owl-banner .owl-prev {
     float: left;
-    background-color: transparent;
-    
-    &:hover {
-        background-color: transparent; 
-        
-    }
 }
-.owl-next {
+.owl-banner .owl-next {
     float: right;
-    
-    &:hover {
-        background-color: transparent; 
-        
-    }
 }
+
 
 .intro {
     max-width: 1200px;
@@ -358,6 +414,108 @@ body {
         color: white;
         padding: 10px 0;
     }
+}
+.banner-intro {
+    max-width: 100%;
+    img.banner-introPage {
+        display: block;
+        width: 100%;
+    }
+}
+.breadcrumb {
+    
+    ul.breadcrumb-list {
+        padding: 10px 0px;
+        list-style: none;
+        display: flex;
+        margin-bottom: 20px;
+        
+        li {
+            display: inline;
+            font-size: 18px;
+            color: $color-text-primary;
+            a {
+                color: $color-breadcrumb-link;
+                text-decoration: none;
+            }
+            a:hover {
+                color: $color-text-primary;
+                text-decoration: none;
+            }
+        }
+        li + li:before {
+            padding: 8px;
+            color: black;
+            content: "/\00a0";
+        }
+    }
+}
+.news-heading {
+    max-width: 1200px;
+    margin: 0 auto;
+    h1 {
+        font-size: 1.7rem;
+        font-weight: 300px;
+    }
+}
+
+.formContact {
+    max-width: 500px;
+    margin: 0 auto;
+    &__heading {
+        h1 {
+            text-transform: uppercase;
+            font-weight: 400;
+            text-align: center;
+            font-size: 2rem;
+        }
+    }
+    &__name {
+        font-size: 1rem;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 10px;
+        border: 1px solid gray;
+        margin: 8px 0 20px 0;
+        outline: none;
+    }
+    textarea {
+        width: 100%;
+        font-size: 1rem;
+        border-radius: 10px;
+        border: 1px solid gray;
+        padding: 10px;
+        resize: none;
+        outline: none;
+    }
+    input[type="submit"] {
+        background-color: rgb(13, 113, 195);
+        margin: 10px 35%;
+        padding: 10px;
+        font-size: 1rem;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        outline: none;
+        width: 150px;
+    }
+    select {
+        width: 104%;
+        margin: 8px 0 20px 0;
+        font-size: 1rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        height: 40px;
+        padding: 20px;
+        outline: none;
+    }
+}
+.map {
+    max-width: 100%;
 }
 
 
